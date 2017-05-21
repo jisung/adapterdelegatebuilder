@@ -14,10 +14,20 @@
  *  limitations under the License.
  */
 
-package io.github.jisung.adapterdelegatebuilder.sample.model;
+package com.adapterdelegatebuilder.sample.model;
 
 /**
  * @author Hannes Dorfmann
  */
-public class Advertisement implements DisplayableItem {
+public class Animal implements DisplayableItem {
+
+  private String name;
+
+  public Animal(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
 }

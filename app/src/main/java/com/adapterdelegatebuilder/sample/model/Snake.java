@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package io.github.jisung.adapterdelegatebuilder.sample.model;
+package com.adapterdelegatebuilder.sample.model;
 
 /**
  * @author Hannes Dorfmann
