@@ -14,20 +14,16 @@
  *  limitations under the License.
  */
 
-package io.github.jisung.adapterdelegatebuilder.sample.model;
+package com.adapterdelegatebuilder.sample.model;
 
 /**
  * @author Hannes Dorfmann
  */
-public class Animal implements DisplayableItem {
+public class Dog extends Animal {
 
-  private String name;
-
-  public Animal(String name) {
-    this.name = name;
+  public Dog(String name) {
+    super(name);
   }
 
-  public String getName() {
-    return name;
-  }
+
 }

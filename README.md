@@ -1,7 +1,31 @@
 # AdapterDelegateBuilder
 
 # AdapterDelegates
-This is an add-on Builder for the [AdapterDelegates](https://github.com/sockeqwe/AdapterDelegates).
+This is an add-on helper class for the [AdapterDelegates](https://github.com/sockeqwe/AdapterDelegates).
+
+# How to use
+```java
+
+SimpleListDelegationAdapter<Animal> adapter = new SimpleListDelegationAdapter<>();
+
+adapter.addDelegate(
+    adapter.createDelegateBuilder(Cat.class)
+        .typeChecker(item -> item instanceof Cat)
+        .viewLayout(R.layout.item_cat)
+        .viewBinder((vh, cat) -> {
+            vh.getView(R.id.name, TextView.class).setText(cat.getName());
+        })
+        .build());
+
+adapter.addDelegate(
+    adapter.createDelegateBuilder(Dog.class)
+        .typeChecker(item -> item instanceof Dog)
+        .viewLayout(R.layout.item_dog)
+        .viewBinder((vh, dog) -> {
+            vh.getView(R.id.name, TextView.class).setText(dog.getName());
+        })
+        .build());
+```
 
 ## Dependencies
 

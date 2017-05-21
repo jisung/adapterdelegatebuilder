@@ -14,16 +14,10 @@
  *  limitations under the License.
  */
 
-package io.github.jisung.adapterdelegatebuilder.sample.model;
+package com.adapterdelegatebuilder.sample.model;
 
 /**
  * @author Hannes Dorfmann
  */
-public class Cat extends Animal {
-
-  public Cat(String name) {
-    super(name);
-  }
-
-
+public class Advertisement implements DisplayableItem {
 }

@@ -29,7 +29,10 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
 
     @Override
     protected boolean isForViewType(@NonNull T item, @NonNull List<T> items, int position) {
-        return typeChecker.isForViewType(item);
+        if (typeChecker != null) {
+            return typeChecker.isForViewType(item);
+        }
+        return false;
     }
 
     @NonNull
@@ -79,7 +82,7 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
         }
 
         public SimpleListItemAdapterDelegate<I,T> build() {
-            return new SimpleListItemAdapterDelegate<I,T>(this);
+            return new SimpleListItemAdapterDelegate<>(this);
         }
     }
 }

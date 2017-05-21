@@ -14,21 +14,10 @@
  *  limitations under the License.
  */
 
-package io.github.jisung.adapterdelegatebuilder.sample.model;
+package com.adapterdelegatebuilder.sample.model;
 
 /**
  * @author Hannes Dorfmann
  */
-public class Gecko extends Animal {
-
-  private String race;
-
-  public Gecko(String name, String race) {
-    super(name);
-    this.race = race;
-  }
-
-  public String getRace() {
-    return race;
-  }
+public interface DisplayableItem {
 }
