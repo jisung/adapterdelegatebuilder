@@ -22,7 +22,6 @@ import java.util.List;
 import io.github.jisung.adapterdelegatebuilder.SimpleListDelegationAdapter;
 import io.github.jisung.adapterdelegatebuilder.SimpleViewBinder;
 import io.github.jisung.adapterdelegatebuilder.SimpleViewHolder;
-import io.github.jisung.adapterdelegatebuilder.ViewTypeChecker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,24 +44,11 @@ public class MainActivity extends AppCompatActivity {
         SimpleListDelegationAdapter<DisplayableItem> adapter = new SimpleListDelegationAdapter<>();
 
         adapter.addDelegate(adapter.createDelegateBuilder(Advertisement.class)
-                .typeChecker(new ViewTypeChecker<DisplayableItem>() {
-                    @Override
-                    public boolean isForViewType(@NonNull DisplayableItem item) {
-                        return item instanceof Advertisement;
-                    }
-                })
                 .viewLayout(R.layout.item_advertisement)
                 .build());
 
-
         adapter.addDelegate(
                 adapter.createDelegateBuilder(Cat.class)
-                        .typeChecker(new ViewTypeChecker<DisplayableItem>() {
-                            @Override
-                            public boolean isForViewType(@NonNull DisplayableItem item) {
-                                return item instanceof Cat;
-                            }
-                        })
                         .viewLayout(R.layout.item_cat)
                         .viewBinder(new SimpleViewBinder<Cat>() {
                             @Override
@@ -74,12 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addDelegate(
                 adapter.createDelegateBuilder(Dog.class)
-                        .typeChecker(new ViewTypeChecker<DisplayableItem>() {
-                            @Override
-                            public boolean isForViewType(@NonNull DisplayableItem item) {
-                                return item instanceof Dog;
-                            }
-                        })
                         .viewLayout(R.layout.item_dog)
                         .viewBinder(new SimpleViewBinder<Dog>() {
                             @Override
@@ -91,12 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addDelegate(
                 adapter.createDelegateBuilder(Gecko.class)
-                        .typeChecker(new ViewTypeChecker<DisplayableItem>() {
-                            @Override
-                            public boolean isForViewType(@NonNull DisplayableItem item) {
-                                return item instanceof Gecko;
-                            }
-                        })
                         .viewLayout(R.layout.item_gecko)
                         .viewBinder(new SimpleViewBinder<Gecko>() {
                             @Override
@@ -109,12 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addDelegate(
                 adapter.createDelegateBuilder(Snake.class)
-                        .typeChecker(new ViewTypeChecker<DisplayableItem>() {
-                            @Override
-                            public boolean isForViewType(@NonNull DisplayableItem item) {
-                                return item instanceof Snake;
-                            }
-                        })
                         .viewLayout(R.layout.item_snake)
                         .viewBinder(new SimpleViewBinder<Snake>() {
                             @Override
