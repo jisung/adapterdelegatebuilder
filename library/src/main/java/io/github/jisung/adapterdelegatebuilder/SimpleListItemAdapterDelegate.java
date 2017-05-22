@@ -58,10 +58,10 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
         private ViewHolderCreateListener onViewHolderCreate;
         private SimpleViewBinder<I> simpleViewBinder;
 
-        public Builder() {
+        Builder() {
         }
 
-        public Builder<I,T> typeChecker(ViewTypeChecker<T> val) {
+        Builder<I,T> typeChecker(ViewTypeChecker<T> val) {
             typeChecker = val;
             return this;
         }
