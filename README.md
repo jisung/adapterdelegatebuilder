@@ -29,6 +29,8 @@ adapter.addDelegate(
 
 ## Dependencies
 
+[![](https://jitpack.io/v/jisung/adapterdelegatebuilder.svg)](https://jitpack.io/#jisung/adapterdelegatebuilder)
+
 ```groovy
 allprojects {
     repositories {
@@ -40,7 +42,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile 'com.github.jisung:adapterdelegatebuilder:3.0.1'
+    compile 'com.github.jisung:adapterdelegatebuilder:3.0.2'
 }
 ```
 
