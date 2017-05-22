@@ -10,7 +10,6 @@ SimpleListDelegationAdapter<Animal> adapter = new SimpleListDelegationAdapter<>(
 
 adapter.addDelegate(
     adapter.createDelegateBuilder(Cat.class)
-        .typeChecker(item -> item instanceof Cat)
         .viewLayout(R.layout.item_cat)
         .viewBinder((vh, cat) -> {
             vh.getView(R.id.name, TextView.class).setText(cat.getName());
@@ -19,7 +18,6 @@ adapter.addDelegate(
 
 adapter.addDelegate(
     adapter.createDelegateBuilder(Dog.class)
-        .typeChecker(item -> item instanceof Dog)
         .viewLayout(R.layout.item_dog)
         .viewBinder((vh, dog) -> {
             vh.getView(R.id.name, TextView.class).setText(dog.getName());
@@ -42,7 +40,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile 'com.github.jisung:adapterdelegatebuilder:3.0.2'
+    compile 'com.github.jisung:adapterdelegatebuilder:3.0.3'
 }
 ```
 

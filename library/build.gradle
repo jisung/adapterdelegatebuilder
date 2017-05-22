@@ -25,11 +25,7 @@ android {
 
 dependencies {
     compile rootProject.ext.recyclerView
-
-    compile('com.hannesdorfmann:adapterdelegates3:3.0.1') {
-        exclude module: 'support-v4'
-        exclude module: 'recyclerview-v7'
-    }
+    compile 'com.hannesdorfmann:adapterdelegates3:3.0.1'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.9.5'
