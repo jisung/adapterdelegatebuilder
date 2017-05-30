@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         .viewLayout(R.layout.item_cat)
                         .viewBinder(new SimpleViewBinder<Cat>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Cat cat) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Cat cat, @NonNull List<Object> payloads) {
                                 vh.getView(R.id.name, TextView.class).setText(cat.getName());
                             }
                         })
@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                         .viewLayout(R.layout.item_dog)
                         .viewBinder(new SimpleViewBinder<Dog>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Dog dog) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Dog dog, @NonNull List<Object>
+                                    payloads) {
                                 vh.getView(R.id.name, TextView.class).setText(dog.getName());
                             }
                         })
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         .viewLayout(R.layout.item_gecko)
                         .viewBinder(new SimpleViewBinder<Gecko>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Gecko gecko) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Gecko gecko, @NonNull List<Object> payloads) {
                                 vh.getView(R.id.name, TextView.class).setText(gecko.getName());
                                 vh.getView(R.id.race, TextView.class).setText(gecko.getRace());
                             }
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         .viewLayout(R.layout.item_snake)
                         .viewBinder(new SimpleViewBinder<Snake>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Snake snake) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Snake snake, @NonNull List<Object> payloads) {
                                 vh.getView(R.id.name, TextView.class).setText(snake.getName());
                                 vh.getView(R.id.race, TextView.class).setText(snake.getRace());
                             }
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         .viewLayout(android.R.layout.simple_list_item_1)
                         .viewBinder(new SimpleViewBinder<DisplayableItem>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull DisplayableItem item) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull DisplayableItem item, @NonNull List<Object> payloads) {
                                 vh.getView(android.R.id.text1, TextView.class).setText(item.toString());
                             }
                         })

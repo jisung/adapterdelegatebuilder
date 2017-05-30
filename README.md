@@ -6,27 +6,23 @@ This is an add-on helper class for the [AdapterDelegates](https://github.com/soc
 # How to use
 ```java
 
-public class AnimalAdapter extends SimpleListDelegationAdapter<Animal> {
-    
-    public AnimalAdapter() {
-        // Cat delegate
-        addDelegate(createDelegateBuilder(Cat.class)
-                .viewLayout(R.layout.item_cat)
-                .viewBinder((vh, cat) -> {
-                    vh.getView(R.id.name, TextView.class).setText(cat.getName());
-                })
-                .build());
+SimpleListDelegationAdapter<Animal> adapter = new SimpleListDelegationAdapter<>();
 
-        // Dog delegate
-        addDelegate(createDelegateBuilder(Dog.class)
-                .viewLayout(R.layout.item_dog)
-                .viewBinder((vh, dog) -> {
-                    vh.getView(R.id.name, TextView.class).setText(dog.getName());
-                })
-                .build());
-    }
-}
+adapter.addDelegate(
+    adapter.createDelegateBuilder(Cat.class)
+        .viewLayout(R.layout.item_cat)
+        .viewBinder((vh, cat, payloads) -> {
+            vh.getView(R.id.name, TextView.class).setText(cat.getName());
+        })
+        .build());
 
+adapter.addDelegate(
+    adapter.createDelegateBuilder(Dog.class)
+        .viewLayout(R.layout.item_dog)
+        .viewBinder((vh, dog, payloads) -> {
+            vh.getView(R.id.name, TextView.class).setText(dog.getName());
+        })
+        .build());
 ```
 
 ## Dependencies
@@ -44,7 +40,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile 'com.github.jisung:adapterdelegatebuilder:3.0.3'
+    compile 'com.github.jisung:adapterdelegatebuilder:3.0.4'
 }
 ```
 
