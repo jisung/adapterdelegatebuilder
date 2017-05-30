@@ -48,7 +48,7 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
     @Override
     protected void onBindViewHolder(@NonNull I item, @NonNull SimpleViewHolder viewHolder, @NonNull List<Object> payloads) {
         if (simpleViewBinder != null) {
-            simpleViewBinder.onBindViewHolder(viewHolder, item);
+            simpleViewBinder.onBindViewHolder(viewHolder, item, payloads);
         }
     }
 

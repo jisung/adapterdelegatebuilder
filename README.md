@@ -11,7 +11,7 @@ SimpleListDelegationAdapter<Animal> adapter = new SimpleListDelegationAdapter<>(
 adapter.addDelegate(
     adapter.createDelegateBuilder(Cat.class)
         .viewLayout(R.layout.item_cat)
-        .viewBinder((vh, cat) -> {
+        .viewBinder((vh, cat, payloads) -> {
             vh.getView(R.id.name, TextView.class).setText(cat.getName());
         })
         .build());
@@ -19,7 +19,7 @@ adapter.addDelegate(
 adapter.addDelegate(
     adapter.createDelegateBuilder(Dog.class)
         .viewLayout(R.layout.item_dog)
-        .viewBinder((vh, dog) -> {
+        .viewBinder((vh, dog, payloads) -> {
             vh.getView(R.id.name, TextView.class).setText(dog.getName());
         })
         .build());
