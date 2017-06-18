@@ -40,7 +40,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile 'com.github.jisung:adapterdelegatebuilder:3.0.4'
+    compile 'com.github.jisung:adapterdelegatebuilder:3.0.5'
 }
 ```
 
