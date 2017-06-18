@@ -21,6 +21,7 @@ import java.util.List;
 
 import io.github.jisung.adapterdelegatebuilder.SimpleListDelegationAdapter;
 import io.github.jisung.adapterdelegatebuilder.SimpleViewBinder;
+import io.github.jisung.adapterdelegatebuilder.SimpleViewBinderNoPayload;
 import io.github.jisung.adapterdelegatebuilder.SimpleViewHolder;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,10 +62,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.addDelegate(
                 adapter.createDelegateBuilder(Dog.class)
                         .viewLayout(R.layout.item_dog)
-                        .viewBinder(new SimpleViewBinder<Dog>() {
+                        .viewBinder(new SimpleViewBinderNoPayload<Dog>() {
                             @Override
-                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Dog dog, @NonNull List<Object>
-                                    payloads) {
+                            public void onBindViewHolder(SimpleViewHolder vh, @NonNull Dog dog) {
                                 vh.getView(R.id.name, TextView.class).setText(dog.getName());
                             }
                         })

@@ -19,6 +19,7 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
     private ViewTypeChecker<T> typeChecker;
     private ViewHolderCreateListener onViewHolderCreate;
     private SimpleViewBinder<I> simpleViewBinder;
+    private SimpleViewBinderNoPayload<I> simpleViewBinderNoPayload;
 
     private SimpleListItemAdapterDelegate(Builder<I,T> builder) {
         layoutId = builder.layoutId;
@@ -49,6 +50,8 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
     protected void onBindViewHolder(@NonNull I item, @NonNull SimpleViewHolder viewHolder, @NonNull List<Object> payloads) {
         if (simpleViewBinder != null) {
             simpleViewBinder.onBindViewHolder(viewHolder, item, payloads);
+        } else if (simpleViewBinderNoPayload != null) {
+            simpleViewBinderNoPayload.onBindViewHolder(viewHolder, item);
         }
     }
 
@@ -57,6 +60,7 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
         private ViewTypeChecker<T> typeChecker;
         private ViewHolderCreateListener onViewHolderCreate;
         private SimpleViewBinder<I> simpleViewBinder;
+        private SimpleViewBinderNoPayload<I> simpleViewBinderNoPayload;
 
         Builder() {
         }
@@ -78,6 +82,11 @@ public class SimpleListItemAdapterDelegate<I extends T, T> extends AbsListItemAd
 
         public Builder<I,T> viewBinder(SimpleViewBinder<I> val) {
             simpleViewBinder = val;
+            return this;
+        }
+
+        public Builder<I,T> viewBinder(SimpleViewBinderNoPayload<I> val) {
+            simpleViewBinderNoPayload = val;
             return this;
         }
 
