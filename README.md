@@ -3,6 +3,10 @@
 # AdapterDelegates
 This is an add-on helper class for the [AdapterDelegates](https://github.com/sockeqwe/AdapterDelegates).
 
+# Deprecated
+This project has moved to [https://github.com/toss/adapterdelegatebuilder](https://github.com/toss/adapterdelegatebuilder)
+
+
 # How to use
 ```java
 
