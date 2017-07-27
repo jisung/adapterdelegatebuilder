@@ -1,13 +1,12 @@
 # AdapterDelegateBuilder
 
-# AdapterDelegates
+## Deprecated
+This project has moved to [https://github.com/toss/android-delegationadapter](https://github.com/toss/android-delegationadapter)
+
+## AdapterDelegates
 This is an add-on helper class for the [AdapterDelegates](https://github.com/sockeqwe/AdapterDelegates).
 
-# Deprecated
-This project has moved to [https://github.com/toss/adapterdelegatebuilder](https://github.com/toss/adapterdelegatebuilder)
-
-
-# How to use
+## How to use
 ```java
 
 SimpleListDelegationAdapter<Animal> adapter = new SimpleListDelegationAdapter<>();
